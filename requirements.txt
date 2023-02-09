@@ -1,0 +1,7 @@
+# Local package install 
+-e .
+
+# third party packages
+pandas
+numpy
+pymongo
