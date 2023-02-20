@@ -18,7 +18,7 @@ setup(name='src',
       description='Insurance industry level project',
       author='Jay Prakash Bind',
       author_email='jaypr202@gmail.com',
-    #   url='github repo link',
+      # url='github repo link',
       packages=find_packages(),
-    #   install_requires = get_requirement()
+      # install_requires = get_requirement()
      )

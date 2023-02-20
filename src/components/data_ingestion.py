@@ -57,6 +57,9 @@ class DataIngestion:  #data divide train, test and validation
                 test_file_path = self.data_ingestion_config.test_file_path
             )
 
+            logging.info(f"Data ingestion artifact: {data_ingestion_artifact}")
+            return data_ingestion_artifact
+
 
         except Exception as e:
             raise InsuranceException(error_message = e, error_detail = sys)
