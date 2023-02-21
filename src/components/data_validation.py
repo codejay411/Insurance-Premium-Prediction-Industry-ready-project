@@ -9,17 +9,17 @@ from scipy.stats import ks_2samp
 import numpy as np
 from src import utils
 
-# Steps in data validation
+'''Steps in data validation
 
-# 1. data type
-# 2. unwanted data finding 
-# 3. data cleaning 
+1. data type
+2. unwanted data finding 
+3. data cleaning '''
 
 class DataValidation:
     def __init__(self, data_validation_config: config_entity.DataValidationConfig, 
                  data_ingestion_artifact: artifact_entity.DataIngestionArtifact):
         try:
-            logging.info(f"**********Data Validation ****************8")
+            logging.info(f"**********Data Validation ****************")
             self.data_validation_config = data_validation_config
             self.data_ingestion_artifact = data_ingestion_artifact
             self.validation_error = dict()
@@ -47,8 +47,8 @@ class DataValidation:
     
     def is_required_columns_exists(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key_name: str)-> bool:
         try:
-            base_columns = base_df
-            current_columns = current_df
+            base_columns = base_df.columns
+            current_columns = current_df.columns
             
             missing_columns = []
             for base_column in base_columns:
@@ -68,8 +68,8 @@ class DataValidation:
         try:
             drift_report = dict()
             
-            base_columns = base_df
-            current_columns = current_df
+            base_columns = base_df.columns
+            current_columns = current_df.columns
             
             for base_column in base_columns:
                 base_data, current_data = base_df[base_column], current_df[base_column]
