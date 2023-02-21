@@ -62,3 +62,7 @@ class ModelTrainingConfig:
         self.accuracy_score_file_path = os.path.join(self.model_trainer_dir, "accuracy_score.yaml") #yaml, json, csv
         self.expected_accuracy = 0.7
         self.overfitting_threshold = 0.3
+        
+class ModelEvaluationConfig:
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig):
+        self.change_threshold= 0.01
